@@ -1,6 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
 
+net use s: http://live.sysinternals.com/tools 
+mkdir c:\sysinternals
+xcopy s:\*.* c:\sysinternals /s
+
 set power=0
 if exist %temp%\%~n0.ps1 del %temp%\%~n0.ps1
 for /f "tokens=*" %%l in ('type "%~f0"') do (
