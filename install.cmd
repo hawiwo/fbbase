@@ -16,6 +16,7 @@ for /f "tokens=*" %%l in ('type "%~f0"') do (
 )
 powershell -NoProfile -ExecutionPolicy Bypass -File %temp%\%~n0.ps1 %*
 del %temp%\%~n0.ps1
+c:\Firebird\Firebird-2.5.9_x64\bin\install_super.bat
 pause
 exit /b
 
