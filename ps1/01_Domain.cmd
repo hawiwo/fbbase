@@ -26,4 +26,4 @@ $NewCompName = Read-Host
 
 #Domäne:    
 $Domainname = "ul-dom.ulmer-automation.de"
- Add-Computer -DomainName $Domainname -Credential ul-dom\Administrator -NewName $NewCompName -Restart
+ Add-Computer -DomainName $Domainname -Credential ul-dom\hwolf -NewName $NewCompName -Restart

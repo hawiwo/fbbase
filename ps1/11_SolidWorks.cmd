@@ -17,5 +17,6 @@ exit /b
 
 *** Ab hier PowerShell ***
 Set-Clipboard -Value "9010 0079 8045 8561 3N6K NPJF"
+Write-Host "Seriennummer in die Zwischenablage kopiert."
 Write-Host "25734@ul-dc-06"
-$result = Start-Process -Wait -FilePath 'P:\90_Download\Solidworks\SOLIDWORKS 2018 SP05\setup.exe' -PassThru
+$result = Start-Process -Wait -FilePath '\\ul-dc-05\public\90_Download\Solidworks\SOLIDWORKS 2018 SP05\setup.exe' -PassThru
