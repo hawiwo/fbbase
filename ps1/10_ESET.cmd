@@ -1,20 +1,3 @@
 @echo off
-setlocal enabledelayedexpansion
+msiexec /qn /i \\ul-dc-05\public\96_Softwareverteilung\eea_nt64.msi ADDLOCAL=ALL PRODUCT_LANG=1031 PRODUCT_LANG_CODE=de_de ACTIVATION_DATA=key:BNEC-XNB6-AKBG-9G9G-E4VA
 
-set power=0
-if exist %temp%\%~n0.ps1 del %temp%\%~n0.ps1
-for /f "tokens=*" %%l in ('type "%~f0"') do (
-  if !power!==0 (
-    if "%%l"=="*** Ab hier PowerShell ***" set power=1
-  ) else (
-    echo %%l >> %temp%\%~n0.ps1
-  )
-)
-powershell -NoProfile -ExecutionPolicy Bypass -File %temp%\%~n0.ps1 %*
-del %temp%\%~n0.ps1
-REM pause
-exit /b
-
-*** Ab hier PowerShell ***
-Set-Clipboard -Value "BNEC-XNB6-AKBG-9G9G-E4VA"
-$result = Start-Process -Wait -FilePath '\\ul-dc-05\public\90_Download\ESET_Antivirus\eea_nt64.msi' -PassThru
